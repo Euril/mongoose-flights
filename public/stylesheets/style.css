@@ -3,6 +3,43 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+ul{
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  background-color: #14688f;
+}
+
+li{
+  float:left;
+  border:1px #8a8a8a;
+  border-style:none solid none solid;
+}
+
+li:first-child{
+  border-right:none;
+}
+
+li a {
+  color:rgb(235, 235, 235);
+  font-weight:bolder;
+  font-size:1em;
+  display:block;
+  padding:20px 30px;
+  text-align:center;
+  text-decoration: none;;
+
+}
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding-left:20px;
+  
+}
+.navbar a:hover{
+  text-decoration: underline;
 }

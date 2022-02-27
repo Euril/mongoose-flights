@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>All Flights</title>
+</head>
+<body>
+  <ul class="navbar">
+    <li><a href = "/flights">All Flights</a></li>
+    <li><a href = "/flights/new">Add Flight</a></li>
+  </ul>
+
+  <h1>All Flights</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Airline</th>
+        <th>Airport</th>
+        <th>Flight Number</th>
+        <th>Departs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%# Oh hey, this is an ejs comment! It starts with a # %>
+      <%# Write the line of EJS to iterate over movies using forEach %>
+      <% flights.forEach(flight=> { %>
+        <tr>
+          <td><%= flight.airline %></td>
+          <td><%= flight.airport %></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.departs %></td>
+        </tr>
+      <%}) %>
+      <%# Close the forEach using EJS here %>
+    </tbody>
+  </table>
+</body>
+</html>
