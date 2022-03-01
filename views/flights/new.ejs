@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add Flight</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body>
-  <ul class="navbar">
-    <li><a href = "/flights">All Flights</a></li>
-    <li><a href = "/flights/new">Add Flight</a></li>
-  </ul>
+<%- include('../partials/html-head') %>
+<!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+<link rel='stylesheet' href='/stylesheets/flights/new.css' />
+<%- include('../partials/navbar') %>
+<main>
   <h1>Add a Flight</h1>
   <form action="/flights" method="POST">
     <label>Airline:
@@ -38,5 +29,5 @@
     </label><br>
     <button type="submit">Add Flight</button>
   </form>
-</body>
-</html>
+</main>
+<%- include('../partials/footer') %>
