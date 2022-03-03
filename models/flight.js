@@ -14,8 +14,9 @@ const flightSchema = new Schema({
   airport:{type:String, enum: ['AUS','DFW','DEN','LAX','SAN'], default:'DEN'},
   flightNo:{type:Number, min:10, max:9999},
   departs:{type:Date, default:function()
-    // {return Date.toString()},
-    {return new Date().getFullYear()},
+    {let date = new Date()
+      date.setFullYear(date.getFullYear()+1)
+      return date},
   },
   tickets:[ticketSchema],
   meal:[{type:Schema.Types.ObjectId, ref:"Meal"}]},{

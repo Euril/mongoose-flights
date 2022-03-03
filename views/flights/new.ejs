@@ -22,10 +22,10 @@
       </select>
     </label><br>
     <label>Flight No:
-      <input type="text" name="flightNo">
+      <input type="text" name="flightNo" placeholder="10-9999" required>
     </label><br>
     <label>Departs:
-      <input type="datetime-local" name="departs" value="2022-3-1T00:00" min="2022-3-1T00:00" max="2024-3-1T00:00" default=>
+      <input type="datetime-local" name="departs" value=<%= departs %> required>
     </label><br>
     <button type="submit">Add Flight</button>
   </form>

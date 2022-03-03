@@ -33,6 +33,7 @@
       <select name="mealId">
         <% meals.forEach(meal => { %> 
           <option value="<%= meal._id%>"><%= meal.name %></option>
+          <%# ☝️🔥 need to keep spacing here extremely case sensitive%> 
         <% }) %> 
       </select>
       <button type="submit">Add to Meal</button>
@@ -46,26 +47,30 @@
       method='POST'
     >
       <label for="seat-input">Seat:</label>
-      <input name="seat" id="seat-input" required pattern="[A-F][1-9]\d?">
+      <input name="seat" id="seat-input" required pattern="[A-F][1-9]\d?" placeholder="[A-F][1-99]" required>
       <label for="price">Price:</label>
-      <input name="price" id="price-input">
+      <input name="price" id="price-input" placeholder="100" required>
       <button type='submit'>Add Ticket</button>
     </form>
     <% if (flight.tickets.length) { %>
       <table>
         <thead>
           <tr>
-            <th>Date</th>
             <th>Seat</th>
             <th>Price</th>
+            <!-- <th></th> -->
           </tr>
         </thead>
         <tbody>
           <% flight.tickets.forEach(function(ticket) { %>
             <tr>
-              <td><%= ticket.createdAt.toLocaleDateString() %></td>
               <td><%= ticket.seat %></td>
               <td><%= ticket.price %></td>
+              <!-- <td>
+                <form action="/tickets/<%# ticket._id %>?_method=DELETE" method="POST">
+                  <button>X</button>
+                </form>
+              </td> -->
             </tr>
           <% }) %>
         </tbody>
